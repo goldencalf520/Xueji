@@ -6,7 +6,7 @@ import { Module } from '@nestjs/common';
  * 拥有的表：prisma/schema/mirror.prisma：mirror_persona, h_mirror_session, h_mirror_message, h_mirror_memory
  *
  * 占位模块：已在 modules/index.ts 预注册，认领对应 issue 后在本目录内实现。
- * 负责 issue 见 docs/architecture/ownership.md。
+ * 负责 issue：#99（MIR-01） → #103（MIR-02） → #104（MIR-03） → #106（MIR-05）。
  */
 @Module({})
 export class MirrorModule {}

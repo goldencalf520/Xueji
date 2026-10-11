@@ -2,7 +2,7 @@
 /**
  * P-35 家人视角首页（V1.1）：子女查看父母的授权内容
  * 规格见 docs/product 文档 §5.3；视觉见 docs/design/miniapp-ui.md。
- * 占位页：已在 pages.json 注册，认领对应 issue 后直接替换本文件内容，无需修改 pages.json。
+ * 占位页：已在 pages.json 注册，由 #93（FAM-02） 实现，直接替换本文件内容，无需修改 pages.json。
  */
 </script>
 
