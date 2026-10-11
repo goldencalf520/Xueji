@@ -1,0 +1,2 @@
+/* uni.scss 会被注入到每个页面与组件的样式中：只放变量，不要写会产出 CSS 的规则 */
+@import '@/styles/tokens.scss';

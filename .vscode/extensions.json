@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "biomejs.biome",
+    "Vue.volar",
+    "Prisma.prisma",
+    "uni-helper.uni-app-snippets-vscode"
+  ]
+}

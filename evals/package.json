@@ -1,0 +1,19 @@
+{
+  "name": "@xueji/evals",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AI 评测集与评测脚本（§10.10、§17.5）：方案文案 150 例、魔镜红队 120 条",
+  "type": "module",
+  "scripts": {
+    "plan": "tsx plan/run.ts",
+    "mirror": "tsx mirror/run.ts"
+  },
+  "dependencies": {
+    "@xueji/ai": "workspace:*",
+    "@xueji/rules": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

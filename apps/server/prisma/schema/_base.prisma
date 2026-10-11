@@ -1,0 +1,21 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// 基础配置（架构负责人维护，业务 issue 不要修改本文件）
+//
+// 多文件 schema 约定（详见 docs/conventions/database.md）：
+//  1. 每个业务域一个文件（如 customer.prisma），只由拥有该域的 issue 修改；
+//  2. 不使用跨文件的 Prisma relation —— 跨域引用一律用标量外键字段（如 customerId BigInt）+ 索引，
+//     这样各域 schema 互不依赖，可以并行开发；同一文件内的表可以声明 relation；
+//  3. 表名、字段名 snake_case（@@map / @map），模型名 PascalCase；健康类表以 h_ 开头；
+//  4. 主键 BigInt 自增；时间 DateTime @db.DateTime(3)，库内存 UTC，接口输出 +08:00；
+//  5. 加密字段 *_enc（Bytes / VARBINARY），查找哈希 *_hash（Char(64)）。
+// ─────────────────────────────────────────────────────────────────────────────
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "mysql"
+}

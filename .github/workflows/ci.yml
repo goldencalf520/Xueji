@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: lint · typecheck · test · build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Lint（Biome）
+        run: pnpm lint
+      - name: Prisma schema 校验
+        run: pnpm db:validate
+      - name: 类型检查
+        run: pnpm typecheck
+      - name: 单元测试
+        run: pnpm test
+      - name: 构建（server / admin / miniapp mp-weixin）
+        run: pnpm build
+
+  migrations:
+    name: prisma migrations 与 schema 一致
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: xueji
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -proot"
+          --health-interval=5s --health-retries=20
+    env:
+      DATABASE_URL: mysql://root:root@127.0.0.1:3306/xueji
+      SHADOW_DATABASE_URL: mysql://root:root@127.0.0.1:3306/xueji_shadow
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: mysql -h 127.0.0.1 -uroot -proot -e "CREATE DATABASE IF NOT EXISTS xueji_shadow"
+      - name: 迁移文件必须完整覆盖 schema（改了 .prisma 却没生成迁移会失败）
+        working-directory: apps/server
+        run: pnpm exec prisma migrate diff --from-migrations prisma/migrations --to-schema prisma/schema --exit-code
+      - name: 迁移可在空库上完整执行
+        working-directory: apps/server
+        run: pnpm exec prisma migrate deploy

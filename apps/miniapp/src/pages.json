@@ -1,0 +1,364 @@
+// 全部页面已预注册（§5.2）。实现页面时只替换对应 .vue 文件，不要修改本文件；确需新增页面时只在对应分包末尾追加。
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/archive/index",
+      "style": {
+        "navigationBarTitleText": "档案"
+      }
+    },
+    {
+      "path": "pages/mirror/index",
+      "style": {
+        "navigationBarTitleText": "魔镜"
+      }
+    },
+    {
+      "path": "pages/me/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pkg-auth",
+      "pages": [
+        {
+          "path": "login",
+          "style": {
+            "navigationBarTitleText": "登录"
+          }
+        },
+        {
+          "path": "consent",
+          "style": {
+            "navigationBarTitleText": "授权确认"
+          }
+        },
+        {
+          "path": "profile",
+          "style": {
+            "navigationBarTitleText": "基础资料"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-assess",
+      "pages": [
+        {
+          "path": "intro",
+          "style": {
+            "navigationBarTitleText": "测评介绍"
+          }
+        },
+        {
+          "path": "map",
+          "style": {
+            "navigationBarTitleText": "关卡地图"
+          }
+        },
+        {
+          "path": "question",
+          "style": {
+            "navigationBarTitleText": "答题"
+          }
+        },
+        {
+          "path": "test-chair",
+          "style": {
+            "navigationBarTitleText": "坐站测试"
+          }
+        },
+        {
+          "path": "test-balance",
+          "style": {
+            "navigationBarTitleText": "单腿站立"
+          }
+        },
+        {
+          "path": "urgent",
+          "style": {
+            "navigationBarTitleText": "紧急提示"
+          }
+        },
+        {
+          "path": "result",
+          "style": {
+            "navigationBarTitleText": "测评结果"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-archive",
+      "pages": [
+        {
+          "path": "timeline",
+          "style": {
+            "navigationBarTitleText": "时间轴"
+          }
+        },
+        {
+          "path": "report",
+          "style": {
+            "navigationBarTitleText": "报告详情"
+          }
+        },
+        {
+          "path": "trend",
+          "style": {
+            "navigationBarTitleText": "指标趋势"
+          }
+        },
+        {
+          "path": "photos",
+          "style": {
+            "navigationBarTitleText": "照片对比"
+          }
+        },
+        {
+          "path": "hospital",
+          "style": {
+            "navigationBarTitleText": "医院报告"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-plan",
+      "pages": [
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "我的方案"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-checkup",
+      "pages": [
+        {
+          "path": "coupons",
+          "style": {
+            "navigationBarTitleText": "体检券列表"
+          }
+        },
+        {
+          "path": "book",
+          "style": {
+            "navigationBarTitleText": "体检预约"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-module",
+      "pages": [
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "模块详情"
+          }
+        },
+        {
+          "path": "lead-form",
+          "style": {
+            "navigationBarTitleText": "意向表单"
+          }
+        },
+        {
+          "path": "vip",
+          "style": {
+            "navigationBarTitleText": "海外 VIP"
+          }
+        },
+        {
+          "path": "transport",
+          "style": {
+            "navigationBarTitleText": "接送预约"
+          }
+        },
+        {
+          "path": "activity",
+          "style": {
+            "navigationBarTitleText": "活动详情与报名"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-points",
+      "pages": [
+        {
+          "path": "passbook",
+          "style": {
+            "navigationBarTitleText": "健康存折"
+          }
+        },
+        {
+          "path": "checkin",
+          "style": {
+            "navigationBarTitleText": "打卡"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-game",
+      "pages": [
+        {
+          "path": "quiz",
+          "style": {
+            "navigationBarTitleText": "每日健康问答"
+          }
+        },
+        {
+          "path": "cards",
+          "style": {
+            "navigationBarTitleText": "记忆翻牌"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-group",
+      "pages": [
+        {
+          "path": "detail",
+          "style": {
+            "navigationBarTitleText": "结伴拼团"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-family",
+      "pages": [
+        {
+          "path": "invite",
+          "style": {
+            "navigationBarTitleText": "邀请家人"
+          }
+        },
+        {
+          "path": "accept",
+          "style": {
+            "navigationBarTitleText": "接受邀请"
+          }
+        },
+        {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": "家人列表"
+          }
+        },
+        {
+          "path": "view",
+          "style": {
+            "navigationBarTitleText": "家人视角首页"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pkg-me",
+      "pages": [
+        {
+          "path": "tier",
+          "style": {
+            "navigationBarTitleText": "会员等级与权益"
+          }
+        },
+        {
+          "path": "settings",
+          "style": {
+            "navigationBarTitleText": "设置"
+          }
+        },
+        {
+          "path": "consents",
+          "style": {
+            "navigationBarTitleText": "授权管理"
+          }
+        },
+        {
+          "path": "privacy",
+          "style": {
+            "navigationBarTitleText": "隐私与数据"
+          }
+        },
+        {
+          "path": "messages",
+          "style": {
+            "navigationBarTitleText": "消息中心"
+          }
+        },
+        {
+          "path": "memories",
+          "style": {
+            "navigationBarTitleText": "魔镜记得的事"
+          }
+        },
+        {
+          "path": "about",
+          "style": {
+            "navigationBarTitleText": "关于"
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["pkg-auth", "pkg-assess"]
+    }
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "雪姬六维健康",
+    "navigationBarBackgroundColor": "#F4F2F3",
+    "backgroundColor": "#F4F2F3"
+  },
+  "tabBar": {
+    "color": "#5C5358",
+    "selectedColor": "#8C2B56",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "fontSize": "14px",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/archive/index",
+        "text": "档案"
+      },
+      {
+        "pagePath": "pages/mirror/index",
+        "text": "魔镜"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

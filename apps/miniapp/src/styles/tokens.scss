@@ -1,0 +1,51 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// 设计令牌（来源：小程序页面总图 v2 精修版，docs/design/miniapp-ui.md）
+// 原则：莓果 = 品牌与操作；医疗青 = 就医与安全（只用于医疗）；警示红 = 只用于紧急；提示黄 = 健康提示。
+// 最终配色以雪姬 VI 为准【待确认 Q05】，届时只改本文件。
+// ─────────────────────────────────────────────────────────────────────────────
+
+// 颜色
+$xj-brand: #8c2b56;
+$xj-brand-soft: #f4e7ed;
+$xj-care: #1f6e68;
+$xj-care-soft: #e6f1ef;
+$xj-notice: #faf1de;
+$xj-notice-border: #ead3a2;
+$xj-alert: #b3261e;
+$xj-bg: #f4f2f3;
+$xj-surface: #ffffff;
+$xj-ink: #1e191c;
+$xj-ink-2: #5c5358;
+$xj-line: #e7e1e4;
+$xj-photo-placeholder: #eae5e8;
+
+// 等级皮肤（§5.5）
+$xj-tier-a-bg: #131013; // 臻享底
+$xj-tier-a-surface: #1e191d; // 臻享面
+$xj-tier-a-gold: #d2b47a; // 香槟金，只用于臻享
+$xj-tier-b-head: $xj-brand; // 尊享：莓果主色头部
+$xj-tier-c-warm: #f5e4dc; // 悦享：明亮暖色
+
+// 圆角：容器 20、内部元素 14、标签 8、按钮全圆角
+$xj-radius-container: 40rpx;
+$xj-radius-inner: 28rpx;
+$xj-radius-tag: 16rpx;
+$xj-radius-pill: 999rpx;
+
+// 字体：中文思源黑体，数字 Geist 等宽数字
+$xj-font-family: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+$xj-font-number: 'Geist', 'DIN Alternate', 'PingFang SC', sans-serif;
+
+// 标准模式 / 乐龄模式（§5.4，按 750rpx 设计稿）
+$xj-std-body: 30rpx;
+$xj-std-title: 40rpx;
+$xj-std-button-h: 88rpx;
+$xj-std-gap: 16rpx;
+$xj-std-line-height: 1.6;
+
+$xj-elder-body: 36rpx;
+$xj-elder-title: 48rpx;
+$xj-elder-question: 44rpx;
+$xj-elder-button-h: 104rpx;
+$xj-elder-gap: 32rpx;
+$xj-elder-line-height: 1.7;

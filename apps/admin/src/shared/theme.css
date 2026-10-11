@@ -1,0 +1,20 @@
+/* 后台品牌令牌：与小程序同源（docs/design/miniapp-ui.md），后台只用莓果主色与医疗青 */
+:root {
+  --xj-brand: #8c2b56;
+  --xj-brand-soft: #f4e7ed;
+  --xj-care: #1f6e68;
+  --xj-care-soft: #e6f1ef;
+  --xj-alert: #b3261e;
+  --xj-notice: #faf1de;
+  --el-color-primary: #8c2b56;
+  --el-color-primary-light-3: #ae6b88;
+  --el-color-primary-light-5: #c595aa;
+  --el-color-primary-light-7: #ddbfcc;
+  --el-color-primary-light-8: #e8d5dd;
+  --el-color-primary-light-9: #f4eaee;
+  --el-color-primary-dark-2: #702245;
+}
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}

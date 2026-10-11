@@ -1,0 +1,21 @@
+node_modules/
+dist/
+coverage/
+.turbo/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+# Prisma 生成的客户端
+apps/server/src/generated/
+# uni-app 构建产物
+apps/miniapp/unpackage/
+apps/miniapp/dist/
+# 本地 IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+# 评测报告中的原始输出（汇总报告需要提交）
+evals/reports/raw/

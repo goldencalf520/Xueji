@@ -1,0 +1,43 @@
+name: 开发任务
+description: 可由单个 agent / 开发者独立认领完成的任务（遵循 AGENTS.md 协作协议）
+labels: ['status:ready']
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景与目标
+      description: 为什么要做，做完后用户 / 员工能做到什么
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: 文档依据
+      description: docs/product/产品设计与开发文档_v1.0.md 的章节号，如 §4.11、附录 J
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 范围
+    validations:
+      required: true
+  - type: textarea
+    id: paths
+    attributes:
+      label: 独占路径
+      description: 本任务唯一允许新增 / 修改的路径（glob）。其它路径只读
+    validations:
+      required: true
+  - type: textarea
+    id: deps
+    attributes:
+      label: 依赖
+      description: Blocked by #x（必须先合并的 issue）
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 用复选框列出，可测试
+    validations:
+      required: true

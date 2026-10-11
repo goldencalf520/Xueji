@@ -1,0 +1,32 @@
+{
+  "name": "雪姬六维健康",
+  "appid": "",
+  "description": "雪姬六维健康平台用户端小程序",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "touristappid",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    },
+    "usingComponents": true,
+    "lazyCodeLoading": "requiredComponents",
+    "optimization": {
+      "subPackages": true
+    },
+    "permission": {},
+    "requiredPrivateInfos": []
+  },
+  "h5": {
+    "router": { "mode": "hash" },
+    "devServer": {
+      "proxy": {
+        "/api": { "target": "http://localhost:3000", "changeOrigin": true }
+      }
+    }
+  },
+  "vueVersion": "3"
+}
