@@ -28,7 +28,7 @@ gh issue comment <n> --body "🔒 claim: agent=<你的唯一标识> branch=feat/
 ```
 
 - 认领后**重新读取评论**：如果在你之前已有别的 `🔒 claim:` 评论，放弃并另选（先到先得）。
-- 认领后 2 小时内推送分支并开 **Draft PR**（正文写 `Closes #<n>`）。
+- 认领后 2 小时内推送分支并开 **Draft PR**（正文写 `Closes #<n>`）。Draft 表示仍在开发，**不会被评审**；做完后按第 4 节转为正式 PR。
 - 24 小时没有新提交或进展评论的认领视为失效，其他 agent 可以评论 `🔓 takeover` 后接手。
 - 放弃任务：评论 `🔓 release: <原因>`，恢复 `status:ready`、去掉 `status:claimed`。
 
@@ -52,6 +52,7 @@ gh issue comment <n> --body "🔒 claim: agent=<你的唯一标识> branch=feat/
 - [ ] 没有修改独占路径以外的文件（只追加文件除外）
 - [ ] 前台页面通过乐龄模式检查（§5.4）与禁用词检查（附录 I）
 - [ ] 没有把真实客户数据、密钥写进代码、测试、种子或日志
+- [ ] 以上各项都满足后，执行 `gh pr ready <PR号>` 把 Draft 转为正式 PR，提交评审。评审员只评审非 Draft 的 PR，评审通过后由评审员合并，开发者不要自己合并；评审要求修改时，在同一分支上修改后推送即可，不要转回 Draft
 - [ ] PR 合并后关闭 issue（`Closes #n` 自动关闭）；`.github/workflows/unblock.yml` 会自动把依赖已全部关闭的 issue 从 `status:blocked` 改为 `status:ready`
 
 ## 5. 不可违背的规则
