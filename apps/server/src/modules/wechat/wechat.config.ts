@@ -25,6 +25,10 @@ export const WECHAT_HTTP_MAX_ATTEMPTS = 3;
 /** 退避基数（毫秒）：第 n 次重试前等待 n × 该值 */
 export const WECHAT_HTTP_RETRY_DELAY_MS = 200;
 
+/** Redis 键前缀（与 common/http-extras 的 `xueji:` 命名一致），后面接 appid */
+export const WECHAT_TOKEN_KEY_PREFIX = 'xueji:wechat:access_token';
+export const WECHAT_TOKEN_LOCK_KEY_PREFIX = 'xueji:wechat:access_token:lock';
+
 export const WechatEnv = z.object({
   NODE_ENV: z.enum(['development', 'test', 'staging', 'production']).default('development'),
   /** 为空表示未配置微信：启用 Fake 实现（仅限 dev / staging，production 直接报错） */
